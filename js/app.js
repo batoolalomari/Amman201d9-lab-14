@@ -1,36 +1,122 @@
 'use strict';
 
+var busMAll = ['bag', 'banana','bathroom','boots','breakfast', 'bubblegum', 'chair', 'cthulhu',
+  'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors','shark','sweep', 'tauntaun',
+  'unicorn', 'usb', 'water-can','wine-glass'];
+
+
+//var body=document.getElementById("deck col-2");
+
+
+var item=document.getElementById("items");
+var option;
+for(var i=0;i<busMAll.length;i++)
+{
+ option=document.createElement("option");
+  option.textContent=busMAll[i];
+  item.appendChild(option);
+
+}
+
+//items.appendChild(body);
+
+
+  //new  Cart(product , quantity);
+
+/*function addToCart(e)
+{
+
+   e.preventDefault() ;
+
+  var product=e.target.item;
+   var quantity=e.target.quantity;
+   Cart.addItem(product , quantity);
+
+   
+
+
+}*/
+
+
+var itemArray=[];
+
 // Cart constructor.
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
   this.items = items;
+   itemArray.push(this);
+  localStorage.setItem('Cart',JSON.stringify(this.items));
 };
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+
+
+    this.items=new  CartItem(product,quantity);
+       /* var cartItem=new  CartItem(product,quantity);
+          this.item.push(cartItem);*/
+    
+          itemArray.push(this.items);
+    console.log(itemArray);
+
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+      
+  /*if(localStorage.getItem('allProducts')){
+    Product.allProducts = JSON.parse(localStorage.getItem('allProducts'));
+  } else{
+    Product.allProducts = [];
+  }*/
+
+  if(localStorage.getItem('Cart')){
+    Cart.items = JSON.parse(localStorage.getItem('Cart'));
+  } else{
+    Cart.items = [];
+  }
+
+
 };
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+
+//  cart.removeItem(item);
+
+      
+
 };
+
+//var catItemArray=[];
 
 var CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
+  
+  //this.items.push(this);
+
+  //localStorage.setItem('allProducts',JSON.stringify(Product.allProducts));
+
 };
+
+
 
 // Product contructor.
 var Product = function(filePath, name) {
+
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
+
+  localStorage.setItem('allProducts',JSON.stringify(Product.allProducts));
+
 };
+
+
 Product.allProducts = [];
+
 
 function generateCatalog() {
   new Product('assets/bag.jpg', 'Bag');
@@ -55,5 +141,9 @@ function generateCatalog() {
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 }
 
+
+console.log(this.items);
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
+
+

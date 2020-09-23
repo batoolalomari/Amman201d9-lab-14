@@ -1,5 +1,47 @@
 /* global Cart */
 'use strict';
+var section=document.getElementsByClassName("deck col-1");
+
+var busMAll = ['bag', 'banana','bathroom','boots','breakfast', 'bubblegum', 'chair', 'cthulhu',
+  'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors','shark','sweep', 'tauntaun',
+  'unicorn', 'usb', 'water-can','wine-glass'];
+
+
+//var body=document.getElementById("deck col-2");
+
+option =document.createElement("option");
+
+for(var i=0;i<busMAll.length;i++)
+{
+ option=document.createElement("option");
+  option.textContent=busMAll[i];
+ 
+
+}
+
+section.appendChild(option);
+
+/*var form=document.createElement("form");
+//form.setAttribute(id="form");
+
+var label = document.createElement("label");
+var input  = document.createElement("input");
+label.setAttribute("Name", "text");
+input.setAttribute("State", "text");
+
+form.appenChild(label);
+form.appendChild(input);
+//form.appendChild(x);
+
+
+section.appenChild(form);*/
+
+
+
+
+
+
+
 
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
