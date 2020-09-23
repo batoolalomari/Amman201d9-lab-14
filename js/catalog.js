@@ -42,6 +42,7 @@ function addSelectedItemToCart(event) {
   console.log(typeof(product));
   //itemArray = JSON.parse(localStorage.getItem('Cart'));
   cart.addItem(product , quantit);
+  viewResult();
 
 
   // TODO: suss out the item picked from the select list
