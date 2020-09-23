@@ -1,1 +1,58 @@
 /* TODO: Make it awesome */
+
+body{
+    background-color: rgb(248, 206, 169)
+}
+
+h1{
+    background-color: rgb(64, 212, 212);
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+nav{
+    margin-top: -5%;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    font-size: x-large;
+}
+
+form{
+    margin-left: 42%;
+  
+}
+
+li{
+    margin: 2%;
+}
+
+.copy{
+    padding: 30px;
+    font-size: x-large;
+    color: darkcyan;
+}
+
+.card{
+    padding: 30px;
+    font-size: x-large;
+    color: #212525;
+}
+
+
+footer p {
+    text-align: center;
+    font-size: xx-large;
+    color: rgb(7, 7, 7);
+    margin-top: 6%;
+}
+
+legend{
+    border: 1px dotted;
+}
