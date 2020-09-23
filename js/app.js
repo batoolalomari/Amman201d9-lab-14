@@ -25,16 +25,11 @@ for(var i=0;i<busMAll.length;i++)
 
 /*function addToCart(e)
 {
-
    e.preventDefault() ;
-
   var product=e.target.item;
    var quantity=e.target.quantity;
    Cart.addItem(product , quantity);
-
    
-
-
 }*/
 
 
@@ -43,20 +38,24 @@ var itemArray=[];
 // Cart constructor.
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
+  
   this.items = items;
-   itemArray.push(this);
-  localStorage.setItem('Cart',JSON.stringify(this.items));
+   itemArray.push({items});
+  localStorage.setItem('Cart',JSON.stringify(itemArray));
+
 };
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
 
 
-    this.items=new  CartItem(product,quantity);
+   // this.items=new  CartItem(product,quantity);
        /* var cartItem=new  CartItem(product,quantity);
           this.item.push(cartItem);*/
+
+          new  CartItem(product,quantity);
     
-          itemArray.push(this.items);
+         // itemArray.push({items});
     console.log(itemArray);
 
 };
@@ -64,16 +63,10 @@ Cart.prototype.addItem = function(product, quantity) {
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
       
-  /*if(localStorage.getItem('allProducts')){
-    Product.allProducts = JSON.parse(localStorage.getItem('allProducts'));
-  } else{
-    Product.allProducts = [];
-  }*/
+  
 
   if(localStorage.getItem('Cart')){
-    Cart.items = JSON.parse(localStorage.getItem('Cart'));
-  } else{
-    Cart.items = [];
+    itemArray = JSON.parse(localStorage.getItem('Cart'));
   }
 
 
@@ -94,10 +87,11 @@ Cart.prototype.removeItem = function(item) {
 var CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
-  
-  //this.items.push(this);
 
-  //localStorage.setItem('allProducts',JSON.stringify(Product.allProducts));
+  new Cart({product,quantity})
+  //Cart.items.push({product,quantity});
+
+  //localStorage.setItem('Cart',JSON.stringify());
 
 };
 
@@ -145,5 +139,3 @@ function generateCatalog() {
 console.log(this.items);
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
-
-
