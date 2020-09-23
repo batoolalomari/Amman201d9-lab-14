@@ -72,7 +72,9 @@ Cart.prototype.saveToLocalStorage = function() {
 
   if(localStorage.getItem('Cart')){
     Cart.items = JSON.parse(localStorage.getItem('Cart'));
-  } else{
+  } else
+  {
+
     Cart.items = [];
   }
 
