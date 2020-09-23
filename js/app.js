@@ -75,8 +75,15 @@ Cart.prototype.saveToLocalStorage = function() {
   }*/
 
   if(localStorage.getItem('Cart')){
+<<<<<<< HEAD
    itemArray = JSON.parse(localStorage.getItem('Cart'));
   } 
+=======
+
+    itemArray = JSON.parse(localStorage.getItem('Cart'));
+
+  }
+>>>>>>> 399e005a87dcee6f57c50bcbb5305ca4a120e0ee
 
 
 };
