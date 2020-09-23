@@ -40,7 +40,7 @@ function addSelectedItemToCart(event) {
   var quantit=event.target.quantity.value;
 
   console.log(typeof(product));
-  
+  //itemArray = JSON.parse(localStorage.getItem('Cart'));
   cart.addItem(product , quantit);
 
 
