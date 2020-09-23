@@ -66,7 +66,9 @@ Cart.prototype.saveToLocalStorage = function() {
   
 
   if(localStorage.getItem('Cart')){
+
     itemArray = JSON.parse(localStorage.getItem('Cart'));
+
   }
 
 
