@@ -13,8 +13,9 @@ var item=document.getElementById("items");
 function viewResult()
 {
   var cart=document.getElementById("cartContents");
-var ul=document.createElement('ul');
+   var ul=document.createElement('ul');
 
+   cart.appendChild(ul);
 //itemArray = JSON.parse(localStorage.getItem('Cart'));
 var list;
 for(var j=0;j<itemArray.length;j++)
